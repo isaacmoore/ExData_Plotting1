@@ -2,7 +2,7 @@
 allData <- read.csv("household_power_consumption.txt", sep = ";", header = T) #read the whole .txt file
 allData$Time <- strptime(paste(allData$Date, allData$Time), "%d/%m/%Y %H:%M:%S") #Convert Date and Time from allData to Date/Time Class
 allData$Date <- as.Date(allData$Date, "%d/%m/%Y") #change Date to Date Class 
-filterData <- as.Date(c("2007-02-01", "2007-02-02"), "%Y-%m-%d") # filter data to the dates specified
+filterData <- as.Date(c("1/2/2007", "2/2/2007"), "%d/%m/%Y") # filter data to the dates specified
 plotData <- subset(allData, Date %in% filterData) # created a variable to store data to be plotted.
 
 # ----- Plotting the Data to a .png -----
