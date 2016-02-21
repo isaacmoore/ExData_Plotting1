@@ -1,5 +1,5 @@
 # ----- Reading the Data -----
-allData <- read.csv("household_power_consumption.txt", sep = ";", header = T) #read the whole .txt file
+allData <- read.csv("household_power_consumption.txt", sep = ";", header = T, stringsAsFactors = F,na.strings="?") #read the whole .txt file
 allData$Time <- strptime(paste(allData$Date, allData$Time), "%d/%m/%Y %H:%M:%S") #Convert Date and Time from allData to Date/Time Class
 allData$Date <- as.Date(allData$Date, "%d/%m/%Y") #change Date to Date Class 
 filterData <- as.Date(c("1/2/2007", "2/2/2007"), "%d/%m/%Y") # filter data to the dates specified
